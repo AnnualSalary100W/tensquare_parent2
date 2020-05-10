@@ -85,7 +85,7 @@ public class AdminController {
 	}
 
 	/**
-     * 根据条件查询
+     * 根据条件查询13213
      * @param searchMap
      * @return
      */
@@ -93,7 +93,9 @@ public class AdminController {
     public Result findSearch( @RequestBody Map searchMap){
         return new Result(true,StatusCode.OK,"查询成功",adminService.findSearch(searchMap));
     }
-	
+
+
+
 	/**
 	 * 增加
 	 * @param admin
