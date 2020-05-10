@@ -1,0 +1,13 @@
+server:
+  port: 9009
+spring:
+  application:
+    name: tensquare-sms
+  rabbitmq:
+    host: 192.168.66.128
+aliyun:
+  sms:
+    accessKeyId: LTAI4Fj9YoUPkMMFrJXULnQi
+    accessKeySecret: LLD9d39uSAnQe3jJK8gJ0bq9Y28E0F
+    template_code: SMS_187261524
+    sign_name: 深海鱼短信功能
