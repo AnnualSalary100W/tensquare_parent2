@@ -114,7 +114,7 @@ public class AdminController {
 	public Result update(@RequestBody Admin admin, @PathVariable String id ){
 		admin.setId(id);
 		adminService.update(admin);		
-		return new Result(true,StatusCode.OK,"修改成功");
+		return new Result(true,StatusCode.OK,"修改成功！");
 	}
 	
 	/**
@@ -124,7 +124,7 @@ public class AdminController {
 	@RequestMapping(value="/{id}",method= RequestMethod.DELETE)
 	public Result delete(@PathVariable String id ){
 		adminService.deleteById(id);
-		return new Result(true,StatusCode.OK,"删除成功");
+		return new Result(true,StatusCode.OK,"删除成功！");
 	}
 	
 }
