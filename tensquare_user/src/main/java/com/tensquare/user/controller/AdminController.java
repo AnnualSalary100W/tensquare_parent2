@@ -41,7 +41,7 @@ public class AdminController {
 	public Result login(@RequestBody Admin admin){
 		Admin adminLogin= adminService.login(admin);
 		if(adminLogin==null){
-			return new Result(false,StatusCode.ERROR,"登录失败");
+			return new Result(false,StatusCode.ERROR,"登录失败！");
 		}
 		//采取使前后端可以通话，利用JWT
 		String token=jwtUtil.createJWT(adminLogin.getId(),adminLogin.getLoginname(),"admin");
