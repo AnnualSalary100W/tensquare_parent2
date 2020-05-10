@@ -34,13 +34,13 @@ public class SpitController {
     @RequestMapping(method = RequestMethod.POST)
     public Result save(@RequestBody Spit spit){
         spitService.save(spit);
-        return new Result(true, StatusCode.OK,"保存成功");
+        return new Result(true, StatusCode.OK,"保存成功！");
     }
     @RequestMapping(value = "/{spitId}",method = RequestMethod.PUT)
     public Result update(@PathVariable String spitId,@RequestBody Spit spit){
         spit.set_id(spitId);
         spitService.update(spit);
-        return new Result(true, StatusCode.OK,"更新成功");
+        return new Result(true, StatusCode.OK,"更新成功！");
     }
 
     @RequestMapping(value = "/{spitId}",method = RequestMethod.DELETE)
