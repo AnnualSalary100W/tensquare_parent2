@@ -51,14 +51,14 @@ public Result addFriend(@PathVariable String friendid,@PathVariable String type)
             //添加非好友
           int flag=  friendService.addNoFriend(userid,friendid);
             if(flag==0){
-                return new Result(false, StatusCode.ERROR,"不能再次添加非好友");
+                return new Result(false, StatusCode.ERROR,"不能再次添加非好友！");
             }
             if(flag==1){
 
-                return new Result(true, StatusCode.OK,"成功");
+                return new Result(true, StatusCode.OK,"成功！");
             }
         }
-        return new Result(false, StatusCode.ERROR,"参数异常");
+        return new Result(false, StatusCode.ERROR,"参数异常！");
     }else{
         return new Result(false, StatusCode.ERROR,"参数异常");
     }

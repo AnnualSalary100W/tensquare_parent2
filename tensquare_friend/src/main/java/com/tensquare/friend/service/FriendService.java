@@ -51,11 +51,11 @@ public class FriendService {
     }
 
     public void deleteFriend(String userid, String friendid) {
-        //删除表中userid到friend这条数据
+        //删除表中userid到friend这条数据；
 friendDao.deleteFriend(userid,friendid);
-        //更新friend到userid的islike为0
+        //更新friend到userid的islike为0；
 friendDao.updataIslike("0",friendid,userid);
-        //非好友表中添加数据
+        //非好友表中添加数据；
         NoFriend nofriend = new NoFriend();
         nofriend.setUserid(userid);
         nofriend.setFriendid(friendid);
