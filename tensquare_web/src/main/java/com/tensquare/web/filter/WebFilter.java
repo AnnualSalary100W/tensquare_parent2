@@ -27,9 +27,9 @@ public class WebFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-        //得到request上下文
+        //得到request的上下文
         RequestContext currentContext = RequestContext.getCurrentContext();
-        //得到request域
+        //得到request的域
         HttpServletRequest request = currentContext.getRequest();
         //得到header
         String header = request.getHeader("Authorization");

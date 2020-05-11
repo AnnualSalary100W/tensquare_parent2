@@ -69,12 +69,12 @@ public  Result deleteFriend(@PathVariable String friendid){
 //验证是否登录，并且拿到当前登录id
         Claims claims= (Claims) request.getAttribute("claims_user");
         if(claims==null){
-            return new Result(false,StatusCode.ERROR,"权限不足");
+            return new Result(false,StatusCode.ERROR,"权限不足！");
         }
         //得到当前登录的用户id
         String userid=claims.getId();
         friendService.deleteFriend(userid,friendid);
         userClient.updatafanscountandfollowcount(userid,friendid,-1);
-        return new Result(true,StatusCode.OK,"删除成功");
+        return new Result(true,StatusCode.OK,"删除成功！");
 }
 }
