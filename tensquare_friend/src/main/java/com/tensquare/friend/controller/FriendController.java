@@ -41,11 +41,11 @@ public Result addFriend(@PathVariable String friendid,@PathVariable String type)
             //添加好友
           int flag=  friendService.addFriend(userid,friendid);
           if(flag==0){
-              return new Result(false, StatusCode.ERROR,"不能再次喜欢");
+              return new Result(false, StatusCode.ERROR,"不能再次喜欢！");
           }
           if(flag==1){
               userClient.updatafanscountandfollowcount(userid,friendid,1);
-              return new Result(true, StatusCode.OK,"成功");
+              return new Result(true, StatusCode.OK,"成功！");
           }
         }else if(type.equals("2")){
             //添加非好友
