@@ -46,7 +46,7 @@ public class SpitController {
     @RequestMapping(value = "/{spitId}",method = RequestMethod.DELETE)
     public Result delete(@PathVariable String spitId){
         spitService.deleteById(spitId);
-        return new Result(true, StatusCode.OK,"删除成功");
+        return new Result(true, StatusCode.OK,"删除成功！");
     }
 
     @RequestMapping(value = "/comment/{parentid}/{page}/{size}",method = RequestMethod.GET)
@@ -62,7 +62,7 @@ public class SpitController {
         String userid="111";
         //判断是否点赞
       if(redisTemplate.opsForValue().get("thumbup_"+userid)!=null){
-            return new Result(false,StatusCode.ERROR,"不能重复点赞");
+            return new Result(false,StatusCode.ERROR,"不能重复点赞！");
         }
         spitService.thumbup(spitId);
         redisTemplate.opsForValue().set("thumbup_"+userid,1);
