@@ -28,7 +28,7 @@ public class ManagerFilter extends ZuulFilter {
     }
 
     /**
-     * 多个过滤器的执行瞬息，数字越小，表示越先执行
+     * 多个过滤器的执行瞬息，数字越小，表示越先执行...
      * @return
      */
     @Override
@@ -83,7 +83,7 @@ public class ManagerFilter extends ZuulFilter {
         }
         requestContext.setSendZuulResponse(false);
         requestContext.setResponseStatusCode(403);//http状态码     
-    requestContext.setResponseBody("无权访问");
+    requestContext.setResponseBody("无权访问.");
     requestContext.getResponse().setContentType("text/html;charset=UTF-8");
 
         return null;
